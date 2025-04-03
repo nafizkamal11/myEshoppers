@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<div th:replace="~{includes/headers::header}"></div>
+<body>
+<div th:replace="~{includes/navigation::navigation}"></div>
+
+<div class="container">
+
+    <div class="bg-secondary-subtle text-primary-emphasis p-3 rounded-2">
+        <h2>Welcome to e-shoppers!</h2>
+        <img src="../static/img/cart.png" th:src="@{/img/cart.png}" alt="shopping-cart" style="max-height: 128px;">
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4 mb-4" th:each="product : ${productList}">
+            <div class="card">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img class="card-img-top" src="../static/img/item.png" th:src="@{/img/item.png}" alt="shopping-cart" style="height: 64px; width: 64px;">
+                </span>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${product.productName}">Name</h5>
+                    <p class="card-text" th:text="${product.description}">Description</p>
+                    <p class="card-text" th:text="${product.price}">Price</p>
+                    <a class="card-link btn btn-outline-info" href="">Add toCart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div th:replace="~{includes/footer::footer}"></div>
+
+</body>
+</html>

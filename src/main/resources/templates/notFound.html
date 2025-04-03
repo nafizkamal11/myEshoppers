@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<div th:replace="~{includes/headers::header}"></div>
+<body>
+<div th:replace="~{includes/navigation::navigation}"></div>
+
+<div class="container">
+    <div class="alert alert-warning">
+        <h4 class="alert-heading">Page not found!</h4>
+        <p>We're sorry, we couldn't find the page you requested</p>
+    </div>
+</div>
+
+<div th:replace="~{includes/footer::footer}"></div>
+
+</body>
+</html>
